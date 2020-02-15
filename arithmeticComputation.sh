@@ -19,3 +19,9 @@ arithmetic[operation2]=$operation2
 arithmetic[operation3]=$operation3
 arithmetic[operation4]=$operation4
 
+#STORING THE OPERATIONS IN AN ARRAY
+for (( index=0; index<${#arithmetic[@]}; index++ ))
+do
+   array[index]=${arithmetic[operation$((index+1))]}
+done
+echo ${array[@]}
